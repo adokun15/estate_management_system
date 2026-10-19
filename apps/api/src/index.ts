@@ -1,5 +1,3 @@
-//import type { ApiResponse, User } from "@repo/shared";
-
 //Extenal Package
 import express from "express";
 import cors from "cors";
@@ -16,11 +14,7 @@ import {
 
 //Routes
 import AuthRouter from "./auth/auth.route";
-import EventRoute from "./events/events.route";
-import UserRouter from "./users/users.route";
-import { AuthorizationClientRequest } from "./utils/middleware/auth";
-
-//dotenv.config({ path: ".env.local" });
+//import { AuthorizationClientRequest } from "./utils/middleware/auth";
 
 dotenv.config({
   path: path.resolve("apps/api/.env.local"),
@@ -34,21 +28,14 @@ app.use(cors());
 app.use(express.json());
 
 //Auth
-app.use("/v0.1/auth", AuthRouter);
-
-//User
-app.use("/v0.1/user", AuthorizationClientRequest, UserRouter);
-
-//Events
-app.use("/v0.1/events", AuthorizationClientRequest, EventRoute);
+app.use("/auth", AuthRouter);
 
 app.get("/", (req, res) => {
-  res.send("Welcome to BEMGS API!");
+  res.send("Welcome to ESMs API!");
 });
 
 // 404 handler
 app.use(RouteNotFoundHandler);
-//app.use(methodNotAllowedHandler(['GET', 'POST', 'PUT', 'DELETE']));
 
 // Global error handler - must be last middleware
 app.use(errorResponseHandler);

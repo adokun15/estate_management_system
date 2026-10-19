@@ -169,4 +169,3 @@ export const GetAllUsersDb = async (filter: IFilterUser) => {
     handlePgError(e);
   }
 };
-//Admin: batch change user: 'priority, roles'

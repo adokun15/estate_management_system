@@ -43,7 +43,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Guiness Nigeria - Home delivery is the best option!</title>
+        <title>
+          Template - ExpressJs + ViteJs + React Router + TypeScript + Postgres
+        </title>
         <Meta />
         <Links />
       </head>

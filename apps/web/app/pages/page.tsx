@@ -22,17 +22,11 @@ export async function action() {
     },
   });
 }
-export default function Landingpage({ loaderData }: Route.ComponentProps) {
+
+export default function Homepage({ loaderData }: Route.ComponentProps) {
   return (
     <div>
-      {loaderData ? (
-        <main>
-          <p> {loaderData}</p>
-          <SignOutButton />
-        </main>
-      ) : (
-        <p>Not authenticated yet!</p>
-      )}
+      <h3>Home PAGE</h3>
     </div>
   );
 }
